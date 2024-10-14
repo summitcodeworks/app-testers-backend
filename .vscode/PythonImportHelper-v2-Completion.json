@@ -1,0 +1,361 @@
+[
+    {
+        "label": "db",
+        "importPath": "app.extensions",
+        "description": "app.extensions",
+        "isExtraImport": true,
+        "detail": "app.extensions",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "app.extensions",
+        "description": "app.extensions",
+        "isExtraImport": true,
+        "detail": "app.extensions",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "app.extensions",
+        "description": "app.extensions",
+        "isExtraImport": true,
+        "detail": "app.extensions",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "app.extensions",
+        "description": "app.extensions",
+        "isExtraImport": true,
+        "detail": "app.extensions",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "UserApp",
+        "importPath": "app.models.user_app",
+        "description": "app.models.user_app",
+        "isExtraImport": true,
+        "detail": "app.models.user_app",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.utils.helper",
+        "description": "app.utils.helper",
+        "isExtraImport": true,
+        "detail": "app.utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "extract_package_name",
+        "importPath": "app.utils.helper",
+        "description": "app.utils.helper",
+        "isExtraImport": true,
+        "detail": "app.utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.utils.helper",
+        "description": "app.utils.helper",
+        "isExtraImport": true,
+        "detail": "app.utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Migrate",
+        "importPath": "flask_migrate",
+        "description": "flask_migrate",
+        "isExtraImport": true,
+        "detail": "flask_migrate",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "create_app",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "peekOfCode": "class User(db.Model):\n    __tablename__ = 'users'\n    user_id = db.Column(db.Integer, primary_key=True)\n    user_key = db.Column(db.String, nullable=False)\n    user_name = db.Column(db.String, nullable=False)\n    user_email = db.Column(db.String, nullable=False, unique=True)\n    user_creation_date = db.Column(db.Date, nullable=False)\n    use_flag = db.Column(db.Boolean, default=True)\n    def to_dict(self):\n        return {",
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserApp",
+        "kind": 6,
+        "importPath": "app.models.user_app",
+        "description": "app.models.user_app",
+        "peekOfCode": "class UserApp(db.Model):\n    __tablename__ = 'user_apps'  # Table name in the database\n    app_id = db.Column(db.Integer, primary_key=True)  # Primary key\n    app_name = db.Column(db.String, nullable=False)  # Application name\n    app_dev_name = db.Column(db.String, nullable=False)  # Developer name\n    app_web_link = db.Column(db.Text)  # Web link of the app\n    app_app_link = db.Column(db.Text)  # App store link\n    app_logo = db.Column(db.Text)  # App logo\n    app_created_on = db.Column(db.Date, nullable=False)  # Creation date\n    app_created_by = db.Column(db.Integer, nullable=False)  # Created by (user_id)",
+        "detail": "app.models.user_app",
+        "documentation": {}
+    },
+    {
+        "label": "get_apps",
+        "kind": 2,
+        "importPath": "app.routes.app_routes",
+        "description": "app.routes.app_routes",
+        "peekOfCode": "def get_apps():\n    apps = UserApp.query.all()\n    return create_response(200, \"App list retrieved successfully\", [app.to_dict() for app in apps])\n@bp.route('/create-app', methods=['POST'])\ndef create_app():\n    data = request.json\n    app_pkg_nme = extract_package_name(data.get('app_app_link'))\n    new_app = UserApp(\n        app_name=data['app_name'],\n        app_dev_name=data['app_dev_name'],",
+        "detail": "app.routes.app_routes",
+        "documentation": {}
+    },
+    {
+        "label": "create_app",
+        "kind": 2,
+        "importPath": "app.routes.app_routes",
+        "description": "app.routes.app_routes",
+        "peekOfCode": "def create_app():\n    data = request.json\n    app_pkg_nme = extract_package_name(data.get('app_app_link'))\n    new_app = UserApp(\n        app_name=data['app_name'],\n        app_dev_name=data['app_dev_name'],\n        app_web_link=data.get('app_web_link'),\n        app_app_link=data.get('app_app_link'),\n        app_logo=data.get('app_logo'),\n        app_created_on=data['app_created_on'],",
+        "detail": "app.routes.app_routes",
+        "documentation": {}
+    },
+    {
+        "label": "get_app",
+        "kind": 2,
+        "importPath": "app.routes.app_routes",
+        "description": "app.routes.app_routes",
+        "peekOfCode": "def get_app(id):\n    app = UserApp.query.get_or_404(id)\n    return create_response(200, \"App retrieved successfully\", app.to_dict())\n@bp.route('/apps/<int:id>', methods=['PUT'])\ndef update_app(id):\n    data = request.json\n    app = UserApp.query.get_or_404(id)\n    app.app_name = data['app_name']\n    app.app_dev_name = data['app_dev_name']\n    app.app_web_link = data.get('app_web_link')",
+        "detail": "app.routes.app_routes",
+        "documentation": {}
+    },
+    {
+        "label": "update_app",
+        "kind": 2,
+        "importPath": "app.routes.app_routes",
+        "description": "app.routes.app_routes",
+        "peekOfCode": "def update_app(id):\n    data = request.json\n    app = UserApp.query.get_or_404(id)\n    app.app_name = data['app_name']\n    app.app_dev_name = data['app_dev_name']\n    app.app_web_link = data.get('app_web_link')\n    app.app_app_link = data.get('app_app_link')\n    app.app_logo = data.get('app_logo')\n    app.app_created_on = data['app_created_on']\n    app.app_created_by = data['app_created_by']",
+        "detail": "app.routes.app_routes",
+        "documentation": {}
+    },
+    {
+        "label": "delete_app",
+        "kind": 2,
+        "importPath": "app.routes.app_routes",
+        "description": "app.routes.app_routes",
+        "peekOfCode": "def delete_app(id):\n    app = UserApp.query.get_or_404(id)\n    db.session.delete(app)\n    db.session.commit()\n    return create_response(204, \"App deleted successfully\")",
+        "detail": "app.routes.app_routes",
+        "documentation": {}
+    },
+    {
+        "label": "bp",
+        "kind": 5,
+        "importPath": "app.routes.app_routes",
+        "description": "app.routes.app_routes",
+        "peekOfCode": "bp = Blueprint('app_routes', __name__)\n@bp.route('/app-lists', methods=['GET'])\ndef get_apps():\n    apps = UserApp.query.all()\n    return create_response(200, \"App list retrieved successfully\", [app.to_dict() for app in apps])\n@bp.route('/create-app', methods=['POST'])\ndef create_app():\n    data = request.json\n    app_pkg_nme = extract_package_name(data.get('app_app_link'))\n    new_app = UserApp(",
+        "detail": "app.routes.app_routes",
+        "documentation": {}
+    },
+    {
+        "label": "register_user",
+        "kind": 2,
+        "importPath": "app.routes.user_routes",
+        "description": "app.routes.user_routes",
+        "peekOfCode": "def register_user():\n    data = request.json\n    new_user = User(\n        user_key=data['user_key'],\n        user_name=data['user_name'],\n        user_email=data['user_email'],\n        user_creation_date=data['user_creation_date'],\n        use_flag=data.get('use_flag', True)  # Default to True if not provided\n    )\n    db.session.add(new_user)",
+        "detail": "app.routes.user_routes",
+        "documentation": {}
+    },
+    {
+        "label": "get_users",
+        "kind": 2,
+        "importPath": "app.routes.user_routes",
+        "description": "app.routes.user_routes",
+        "peekOfCode": "def get_users():\n    users = User.query.all()\n    return create_response(200, \"User list retrieved successfully\", [user.to_dict() for user in users])\n@app.route('/users/<int:id>', methods=['GET'])\ndef get_user(id):\n    user = User.query.get_or_404(id)\n    return create_response(200, \"User retrieved successfully\", user.to_dict())\n@app.route('/users/<int:id>', methods=['PUT'])\ndef update_user(id):\n    data = request.json",
+        "detail": "app.routes.user_routes",
+        "documentation": {}
+    },
+    {
+        "label": "get_user",
+        "kind": 2,
+        "importPath": "app.routes.user_routes",
+        "description": "app.routes.user_routes",
+        "peekOfCode": "def get_user(id):\n    user = User.query.get_or_404(id)\n    return create_response(200, \"User retrieved successfully\", user.to_dict())\n@app.route('/users/<int:id>', methods=['PUT'])\ndef update_user(id):\n    data = request.json\n    user = User.query.get_or_404(id)\n    user.user_key = data['user_key']\n    user.user_name = data['user_name']\n    user.user_email = data['user_email']",
+        "detail": "app.routes.user_routes",
+        "documentation": {}
+    },
+    {
+        "label": "update_user",
+        "kind": 2,
+        "importPath": "app.routes.user_routes",
+        "description": "app.routes.user_routes",
+        "peekOfCode": "def update_user(id):\n    data = request.json\n    user = User.query.get_or_404(id)\n    user.user_key = data['user_key']\n    user.user_name = data['user_name']\n    user.user_email = data['user_email']\n    user.user_creation_date = data['user_creation_date']\n    user.use_flag = data.get('use_flag', True)\n    db.session.commit()\n    return create_response(200, \"User updated successfully\", user.to_dict())",
+        "detail": "app.routes.user_routes",
+        "documentation": {}
+    },
+    {
+        "label": "delete_user",
+        "kind": 2,
+        "importPath": "app.routes.user_routes",
+        "description": "app.routes.user_routes",
+        "peekOfCode": "def delete_user(id):\n    user = User.query.get_or_404(id)\n    db.session.delete(user)\n    db.session.commit()\n    return create_response(204, \"User deleted successfully\")",
+        "detail": "app.routes.user_routes",
+        "documentation": {}
+    },
+    {
+        "label": "bp",
+        "kind": 5,
+        "importPath": "app.routes.user_routes",
+        "description": "app.routes.user_routes",
+        "peekOfCode": "bp = Blueprint('user_routes', __name__)\n@app.route('/register-user', methods=['POST'])\ndef register_user():\n    data = request.json\n    new_user = User(\n        user_key=data['user_key'],\n        user_name=data['user_name'],\n        user_email=data['user_email'],\n        user_creation_date=data['user_creation_date'],\n        use_flag=data.get('use_flag', True)  # Default to True if not provided",
+        "detail": "app.routes.user_routes",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "kind": 2,
+        "importPath": "app.utils.helper",
+        "description": "app.utils.helper",
+        "peekOfCode": "def create_response(response_code, response_message, data=None):\n    \"\"\"Create a standardized response.\"\"\"\n    response_body = {\n        \"header\": {\n            \"responseCode\": response_code,\n            \"responseMessage\": response_message\n        },\n        \"response\": data\n    }\n    return jsonify(response_body), response_code",
+        "detail": "app.utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "extract_package_name",
+        "kind": 2,
+        "importPath": "app.utils.helper",
+        "description": "app.utils.helper",
+        "peekOfCode": "def extract_package_name(link):\n    \"\"\"Extract the package name from Play Store or app store links.\"\"\"\n    match = re.search(r'id=([a-zA-Z0-9._]+)', link) or re.search(r'com\\.[a-zA-Z0-9._]+', link)\n    if match:\n        return match.group(0).replace('id=', '')\n    return None",
+        "detail": "app.utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "kind": 6,
+        "importPath": "app.config",
+        "description": "app.config",
+        "peekOfCode": "class Config:\n    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'postgresql://debarunlahiri:password@localhost/app_testers')\n    SQLALCHEMY_TRACK_MODIFICATIONS = False",
+        "detail": "app.config",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "app.extensions",
+        "description": "app.extensions",
+        "peekOfCode": "db = SQLAlchemy()\nmigrate = Migrate()\ncors = CORS()",
+        "detail": "app.extensions",
+        "documentation": {}
+    },
+    {
+        "label": "migrate",
+        "kind": 5,
+        "importPath": "app.extensions",
+        "description": "app.extensions",
+        "peekOfCode": "migrate = Migrate()\ncors = CORS()",
+        "detail": "app.extensions",
+        "documentation": {}
+    },
+    {
+        "label": "cors",
+        "kind": 5,
+        "importPath": "app.extensions",
+        "description": "app.extensions",
+        "peekOfCode": "cors = CORS()",
+        "detail": "app.extensions",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app.manage",
+        "description": "app.manage",
+        "peekOfCode": "app = create_app()\nif __name__ == '__main__':\n    app.run(debug=True)",
+        "detail": "app.manage",
+        "documentation": {}
+    }
+]
