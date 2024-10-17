@@ -7,6 +7,8 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object('app.config.Config')
 
+    app.debug = True
+
     # Initialize extensions
     db.init_app(app)
     migrate.init_app(app, db)
