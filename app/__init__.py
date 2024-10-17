@@ -13,7 +13,8 @@ def create_app():
     cors.init_app(app)
 
     # Register Blueprints (routes)
-    app.register_blueprint(user_routes.bp)
+    from app.routes import user_routes, app_routes
+    app.register_blueprint(user_routes.bp)  # Register the blueprint here
     app.register_blueprint(app_routes.bp)
 
     return app
