@@ -34,13 +34,17 @@ def user_key_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         user_key = request.headers.get('user_key')
+        print(f"User Key received: {user_key}")  # Debugging
 
         if not user_key:
+            print("No user key provided")
             return create_response(401, "Api key is required", None)
 
         user = User.query.filter_by(user_key=user_key).first()
+        print(f"User found: {user}")  # Debugging
 
         if not user:
+            print("Invalid API key")
             return create_response(401, "Invalid api key", None)
 
         return f(*args, **kwargs)
