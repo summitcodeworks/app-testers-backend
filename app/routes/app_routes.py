@@ -1,18 +1,21 @@
 from flask import Blueprint, request
 from app.models.user_app import UserApp
 from app.extensions import db
-from app.utils.helper import create_response
+from app.utils.helper import create_response, user_key_required
 from app.utils.helper import extract_package_name
 
 bp = Blueprint('app_routes', __name__)
 
+
 @bp.route('/app-lists', methods=['GET'])
+@user_key_required
 def get_apps():
     apps = UserApp.query.all()
     return create_response(200, "App list retrieved successfully", [app.to_dict() for app in apps])
 
 
 @bp.route('/create-app', methods=['POST'])
+@user_key_required
 def create_app():
     data = request.json
     app_pkg_nme = extract_package_name(data.get('app_app_link'))
@@ -47,6 +50,7 @@ def create_app():
 
 
 @bp.route('/app-detail/<int:id>', methods=['GET'])
+@user_key_required
 def get_app(id):
     # Query the database for the app using the provided app ID
     app = UserApp.query.get(id)
@@ -58,8 +62,8 @@ def get_app(id):
     return create_response(200, "App retrieved successfully", app.to_dict())
 
 
-
 @bp.route('/apps/<int:id>', methods=['PUT'])
+@user_key_required
 def update_app(id):
     data = request.json
     app = UserApp.query.get_or_404(id)
@@ -78,9 +82,38 @@ def update_app(id):
     db.session.commit()
     return create_response(200, "App updated successfully", app.to_dict())
 
+
 @bp.route('/apps/<int:id>', methods=['DELETE'])
+@user_key_required
 def delete_app(id):
     app = UserApp.query.get_or_404(id)
     db.session.delete(app)
     db.session.commit()
     return create_response(204, "App deleted successfully")
+
+
+@bp.route('/search-apps', methods=['GET'])
+@user_key_required
+def search_apps():
+    # Get query parameters from the request
+    app_name = request.args.get('app_name')
+    app_dev_name = request.args.get('app_dev_name')
+    app_pkg_nme = request.args.get('app_pkg_nme')
+
+    # Build the query dynamically based on the provided filters
+    query = UserApp.query
+
+    if app_name:
+        query = query.filter(UserApp.app_name.ilike(f"%{app_name}%"))
+
+    if app_dev_name:
+        query = query.filter(UserApp.app_dev_name.ilike(f"%{app_dev_name}%"))
+
+    if app_pkg_nme:
+        query = query.filter(UserApp.app_pkg_nme.ilike(f"%{app_pkg_nme}%"))
+
+    # Execute the query and get the results
+    apps = query.all()
+
+    # Return the search results
+    return create_response(200, "Search results retrieved successfully", [app.to_dict() for app in apps])

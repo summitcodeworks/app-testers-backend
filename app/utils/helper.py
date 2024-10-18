@@ -1,5 +1,8 @@
 from flask import jsonify
 import re
+from functools import wraps
+from flask import request
+from app.models.user import User
 
 def create_response(response_code, response_message, data=None):
     """Create a standardized response."""
@@ -25,3 +28,21 @@ def extract_package_name(link):
         return match.group(1)
 
     return None
+
+
+def user_key_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        user_key = request.headers.get('user_key')
+
+        if not user_key:
+            return create_response(401, "Api key is required", None)
+
+        user = User.query.filter_by(user_key=user_key).first()
+
+        if not user:
+            return create_response(401, "Invalid api key", None)
+
+        return f(*args, **kwargs)
+
+    return decorated_function
