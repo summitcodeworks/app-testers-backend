@@ -3,6 +3,7 @@ import re
 from functools import wraps
 from flask import request
 from app.models.user import User
+import logging
 
 def create_response(response_code, response_message, data=None):
     """Create a standardized response."""
@@ -33,8 +34,8 @@ def extract_package_name(link):
 def user_key_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        user_key = request.headers.get('user_key')
-        print(f"User Key received: {user_key}")  # Debugging
+        user_key = request.headers.get('api-key')
+        print(f"Headers received: {request.headers}")  # Log all headers
 
         if not user_key:
             print("No user key provided")
@@ -50,3 +51,5 @@ def user_key_required(f):
         return f(*args, **kwargs)
 
     return decorated_function
+
+
